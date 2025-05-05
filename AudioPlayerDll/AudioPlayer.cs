@@ -38,6 +38,18 @@ namespace AudioPlayerDll
             return 1.0;
         }
 
+        [DllExport("ChannelReset")]
+        public static double ChannelReset(double chanId)
+        {
+            if (!_channels.ContainsKey(chanId))
+            {
+                return 0.0;
+            }
+
+            _channels[chanId].currentPlaylist.clear();
+            return 1.0;
+        }
+
         [DllExport("ChannelPlay")]
         public static double ChannelPlay(double chanId)
         {
@@ -101,6 +113,11 @@ namespace AudioPlayerDll
             {
                 return 0.0;
             }
+
+            if (_channels[chanId].currentMedia == null)
+            {
+                return 0.0;
+            }
             return _channels[chanId].currentMedia.duration;
         }
 
@@ -108,6 +125,10 @@ namespace AudioPlayerDll
         public static double ChannelPosition(double chanId)
         {
             if (!_channels.ContainsKey(chanId))
+            {
+                return 0.0;
+            }
+            if (_channels[chanId].currentMedia == null)
             {
                 return 0.0;
             }
