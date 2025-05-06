@@ -30,6 +30,8 @@
         {"$GMExtensionFunction":"","%Name":"ChannelKillAll","argCount":0,"args":[],"documentation":"","externalName":"ChannelKillAll","help":"ChannelKillAll()","hidden":false,"kind":1,"name":"ChannelKillAll","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"ChannelPause","argCount":0,"args":[2,],"documentation":"","externalName":"ChannelPause","help":"ChannelPause(chanId)","hidden":false,"kind":1,"name":"ChannelPause","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"ChannelReset","argCount":0,"args":[2,],"documentation":"","externalName":"ChannelReset","help":"ChannelReset(chanId)","hidden":false,"kind":1,"name":"ChannelReset","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
+        {"$GMExtensionFunction":"","%Name":"ChannelGet","argCount":0,"args":[2,],"documentation":"","externalName":"ChannelGet","help":"ChannelGet(chanId)","hidden":false,"kind":1,"name":"ChannelGet","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
+        {"$GMExtensionFunction":"","%Name":"ChannelGetVolume","argCount":0,"args":[2,],"documentation":"","externalName":"ChannelGetVolume","help":"ChannelGetVolume(chanId)","hidden":false,"kind":1,"name":"ChannelGetVolume","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
       ],"init":"PlayerInit","kind":1,"name":"Position","order":[
         {"name":"PlayerInit","path":"extensions/audio_player/audio_player.yy",},
         {"name":"ChannelCreate","path":"extensions/audio_player/audio_player.yy",},

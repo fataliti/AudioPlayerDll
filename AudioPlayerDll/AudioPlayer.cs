@@ -38,6 +38,16 @@ namespace AudioPlayerDll
             return 1.0;
         }
 
+        [DllExport("ChannelGet")]
+        public static string ChannelGet(double chanId)
+        {
+            if (!_channels.ContainsKey(chanId))
+            {
+                return "";
+            }
+            return _channels[chanId].URL;
+        }
+
         [DllExport("ChannelReset")]
         public static double ChannelReset(double chanId)
         {
@@ -45,8 +55,8 @@ namespace AudioPlayerDll
             {
                 return 0.0;
             }
-
             _channels[chanId].currentPlaylist.clear();
+            _channels[chanId].URL = "";
             return 1.0;
         }
 
@@ -92,6 +102,17 @@ namespace AudioPlayerDll
             }
             _channels[chanId].settings.volume = (int)level;
             return 1.0;
+        }
+
+        [DllExport("ChannelGetVolume")]
+        public static double ChannelGetVolume(double chanId)
+        {
+            if (!_channels.ContainsKey(chanId))
+            {
+                return 0.0;
+            }
+
+            return Convert.ToDouble(_channels[chanId].settings.volume);
         }
 
         [DllExport("ChannelKill")]

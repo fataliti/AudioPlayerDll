@@ -1,17 +1,10 @@
 function SoundChannel() constructor {
 	__id = ChannelCreate();
-	__volume = 100;
-	__fileName = "";
 	
- 	static setSound = function(soundPath) {
-		__fileName = filename_name(soundPath);
+	static setSound = function(soundPath) {
 		var s = ChannelSet(__id, soundPath);
 		stop();
 		return s;
-	}
-	
-	static getName = function() {
-		return __fileName;	
 	}
 	
 	static play = function() {
@@ -27,20 +20,23 @@ function SoundChannel() constructor {
 	}
 	
 	static setVolume = function(volume) {
-		__volume = volume;
 		return ChannelVolume(__id, volume);
-	}
-	
-	static getVolume = function(volume) {
-		return __volume;
 	}
 	
 	static destroy = function() {
 		return ChannelKill(__id);
 	}
-	
+
 	static reset = function() {
 		return ChannelReset(__id);
+	}
+	
+	static getSound = function() {
+		return ChannelGet(__id);	
+	}
+	
+	static getVolume = function() {
+		return ChannelGetVolume(__id);
 	}
 	
 	static getDuration = function() {
