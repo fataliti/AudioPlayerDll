@@ -93,7 +93,7 @@ namespace AudioPlayerDll
             return 1.0;
         }
 
-        [DllExport("ChannelVolume")]
+        [DllExport("ChannelSetVolume")]
         public static double ChannelVolume(double chanId, double level)
         {
             if (!_channels.ContainsKey(chanId))
@@ -127,7 +127,7 @@ namespace AudioPlayerDll
             return 1.0;
         }
 
-        [DllExport("ChannelDuration")]
+        [DllExport("ChannelGetDuration")]
         public static double ChannelDuration(double chanId)
         {
             if (!_channels.ContainsKey(chanId))
@@ -142,7 +142,7 @@ namespace AudioPlayerDll
             return _channels[chanId].currentMedia.duration;
         }
 
-        [DllExport("ChannelPosition")]
+        [DllExport("ChannelGetPosition")]
         public static double ChannelPosition(double chanId)
         {
             if (!_channels.ContainsKey(chanId))

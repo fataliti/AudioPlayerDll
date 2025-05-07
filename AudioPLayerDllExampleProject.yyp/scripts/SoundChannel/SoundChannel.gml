@@ -19,16 +19,20 @@ function SoundChannel() constructor {
 		return ChannelStop(__id);	
 	}
 	
-	static setVolume = function(volume) {
-		return ChannelVolume(__id, volume);
+	static reset = function() {
+		return ChannelReset(__id);
 	}
 	
 	static destroy = function() {
 		return ChannelKill(__id);
 	}
-
-	static reset = function() {
-		return ChannelReset(__id);
+	
+	static setVolume = function(volume) {
+		return ChannelSetVolume(__id, volume);
+	}
+	
+	static setPosition = function(position) {
+		return ChannelSetPosition(__id, position);	
 	}
 	
 	static getSound = function() {
@@ -40,15 +44,12 @@ function SoundChannel() constructor {
 	}
 	
 	static getDuration = function() {
-		return ChannelDuration(__id);	
+		return ChannelGetDuration(__id);	
 	}
 	
 	static getPosition = function() {
-		return ChannelPosition(__id);	
+		return ChannelGetPosition(__id);	
 	}
-	
-	static setPosition = function(position) {
-		return ChannelSetPosition(__id, position);	
-	}
+
 }
 
