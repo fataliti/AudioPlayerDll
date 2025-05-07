@@ -3,8 +3,6 @@
 A lightweight extension for playing audio files using WMPLib.
 Made it for [Fatalny-Direct](https://github.com/fataliti/Fatalny-Direct)
 
-## Initialization
-
 ### `PlayerInit()`
 - Initializes the audio system
 - Returns `1` on success
